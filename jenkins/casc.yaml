@@ -19,7 +19,7 @@ credentials:
               scope: GLOBAL
               id: github-read-only
               username: "${GITHUB_USERNAME}"
-              password: "${GITHUB_TOKEN}"
+              # password: "${GITHUB_TOKEN}"
               description: "Read-only access to the private GitHub repository"
           - string:
               scope: GLOBAL
@@ -65,7 +65,7 @@ jobs:
                   url('${GITHUB_REPOSITORY_URL}')
                   credentials('github-read-only')
                 }
-                branch('*/master')
+                branch('*/main')
               }
             }
             scriptPath('Jenkinsfile')

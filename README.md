@@ -94,7 +94,7 @@ The backend consists of the following components:
 
 ## CI/CD and SonarQube
 
-Jenkins provides continuous integration and deployment for the marketplace. It polls the repository's `master` branch, then checks out changes and runs the backend tests and frontend install, build, and test stages.
+Jenkins provides continuous integration and deployment for the marketplace. It polls the repository's `main` branch, then checks out changes and runs the backend tests and frontend install, build, and test stages.
 
 ### Starting Jenkins and SonarQube
 
