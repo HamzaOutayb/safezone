@@ -78,9 +78,11 @@ pipeline {
           withSonarQubeEnv('SonarQube') {
             sh "${scannerHome}/bin/sonar-scanner"
           }
-          timeout(time: 10, unit: 'MINUTES') {
-          waitForQualityGate abortPipeline: true
-        }
+
+          def qualityGate = waitForQualityGate abortPipeline: false
+          if (!qualityGate || qualityGate.status != 'OK') {
+            error "SonarQube quality gate failed or did not return a result: ${qualityGate?.status ?: 'unknown'}"
+          }
         }
       }
     }
