@@ -85,15 +85,6 @@ pipeline {
       }
     }
 
-    // stage('Quality gate') {
-    //   steps {
-    //     echo 'Waiting for the SonarQube quality gate.'
-    //     timeout(time: 10, unit: 'MINUTES') {
-    //       waitForQualityGate abortPipeline: true
-    //     }
-    //   }
-    // }
-
     stage('Deploy application') {
       steps {
         echo 'Building and deploying the app'
